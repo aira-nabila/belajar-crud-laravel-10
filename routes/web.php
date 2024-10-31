@@ -19,3 +19,8 @@ Route::get('/', function () {
 
 
 Route::resource('post', \App\Http\Controllers\PostController::class);
+
+
+if (file_exists(app_path('Http/Controllers/LocalizationController.php'))) {
+    Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class , 'lang']);
+}
